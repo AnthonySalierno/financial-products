@@ -1,0 +1,22 @@
+{
+  "name": "financial-products",
+  "version": "1.0.0",
+  "description": "Instructions ----------------- Write a one page app with a text input. When the user enters some text into the text input, the app should use the data feed to search product names for the term the user entered into the text input. When the results are returned you should display the results in the same page (using templating engine). We don't expect the results to look gorgeous, but some thought should be put in to how the results are displayed so they are understandable by the user and follow responsive layout. The products also have types such as bank, credit card, etc. Use this data to further organize search results.",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonySalierno/financial-products.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthonySalierno/financial-products/issues"
+  },
+  "homepage": "https://github.com/AnthonySalierno/financial-products#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
