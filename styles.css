@@ -1,0 +1,21 @@
+.input-field {
+  width: 20%;
+}
+
+.submit-button {
+  margin-top: 10px;
+}
+
+#results {
+  margin-top: 50px;
+}
+
+.product {
+  margin: 5px 5px 5px 5px;
+  text-align: justify;
+  height: 200px;
+  background-color: lightblue;
+  width: 30%;
+  display: inline-block;
+  border: 1px solid black;
+}

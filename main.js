@@ -64,6 +64,10 @@ $(document).ready(function() {
         entry.appendTo($('#results'));
       }
     }
+    let divs = $("div > div");
+    for (let j = 0; j < divs.length; j += 3) {
+      divs.slice(j, j + 3).wrapAll("<div class='row'></div>");
+    }
   });
 
 });
