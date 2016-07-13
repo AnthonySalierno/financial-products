@@ -48,13 +48,22 @@ $(document).ready(function() {
   ];
 
   $('.input-field').keyup(function() {
-    let entry = document.getElementById('results');
-    while(entry.hasChildNodes()) {
-      entry.removeChild(entry.childNodes[0]);
+    let list = document.getElementById('results');
+    while(list.hasChildNodes()) {
+      list.removeChild(list.childNodes[0]);
     }
-    $('<div />')
-      .html(this.value)
-      .appendTo($('#results'));
+    let value = this.value;
+    for (let i = 0; i < products.length; i++) {
+      let regEx = new RegExp(value, 'i');
+      if (value !== '' && products[i].product.match(regEx)) {
+        let entry = $('<div />')
+          .addClass('product')
+          .attr('id', products[i].product.toLowerCase().replace(' ', '-'))
+          .addClass(products[i].type.toLowerCase().replace(' ', '-'))
+          .html(products[i].product);
+        entry.appendTo($('#results'));
+      }
+    }
   });
 
 });
