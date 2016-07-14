@@ -12,9 +12,16 @@
     </script>
   </head>
   <body>
+    <h1>Financial Products</h1>
     <div class="user-entry">
       <input class="input-field" type="text" placeholder="Search for financial products here (e.g. checking account, personal loans, etc.)"/>
-      <input class="submit-button" type="submit">
+      <select id="dropdown-menu">
+        <option value="select" disabled selected>Search by Product Type</option>
+        <option value="bank">Bank</option>
+        <option value="retirement">Retirement</option>
+        <option value="brokerage">Brokerage</option>
+        <option value="credit-card">Credit Card</option>
+      </select>
     </div>
     <div id="results">
     </div>

@@ -25,7 +25,15 @@ $(document).ready(function() {
         }
       })
   });
+  $(document).on('change', '#dropdown-menu', function() {
+    let selected = document.getElementById('dropdown-menu');
+    let value = selected.options[selected.selectedIndex].value;
+    $('#dropdown-menu')
+      .removeClass()
+      .addClass(value);
+  });
   $(document).on('mouseover', '.product', function() {
 
-  })
+  });
+
 });
