@@ -4,8 +4,7 @@ $(document).ready(function() {
     while(list.hasChildNodes()) {
       list.removeChild(list.childNodes[0]);
     }
-    let query = this.value;
-
+    let query = $('.input-field').val();
     $.get('/api/data', query)
       .done(function(data) {
         const filteredClass = $('#dropdown-menu').attr('class');
