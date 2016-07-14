@@ -21,4 +21,7 @@ $(document).ready(function() {
         }
       })
   });
+  $(document).on('mouseover', '.product', function() {
+    console.log('working');
+  })
 });
