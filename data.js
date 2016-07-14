@@ -31,7 +31,7 @@ const products = [
   },
   {
     id: 7,
-    product: 'Portfolio',
+    product: 'Mutual Funds',
     type: 'Brokerage Account',
   },
   {
@@ -42,6 +42,41 @@ const products = [
   {
     id: 9,
     product: 'Pension',
+    type: 'Retirement Account',
+  },
+  {
+    id: 10,
+    product: 'Money Market Account',
+    type: 'Bank',
+  },
+  {
+    id: 11,
+    product: 'Certificate of Deposit (CD)',
+    type: 'Bank',
+  },
+  {
+    id: 12,
+    product: 'Pension',
+    type: 'Brokerage Account',
+  },
+  {
+    id: 13,
+    product: 'Exchange-Traded Funds (ETFs)',
+    type: 'Brokerage Account',
+  },
+  {
+    id: 14,
+    product: 'Mutual Funds',
+    type: 'Brokerage Account',
+  },
+  {
+    id: 15,
+    product: 'Bonds',
+    type: 'Brokerage Account',
+  },
+  {
+    id: 16,
+    product: 'Options',
     type: 'Brokerage Account',
   },
 ];
