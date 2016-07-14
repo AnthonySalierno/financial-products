@@ -7,13 +7,17 @@ $(document).ready(function() {
     let query = this.value;
     $.get('/api/data', query)
       .done(function(data) {
-        _.each(data, function(product) {
-          let entry = $('<div />')
+        _.each(data, function(item) {
+          let div = $('<div />')
             .addClass('product')
-            .attr('id', product.toLowerCase().replace(' ', '-'))
-            .addClass(product.toLowerCase().replace(' ', '-'))
-            .html(product);
-          entry.appendTo($('#results'));
+            .attr('id', item.product.toLowerCase().replace(' ', '-'))
+            .addClass(item.type.toLowerCase().replace(' ', '-'))
+            .html(item.product)
+          let p = ($('<p />'))
+            .addClass('type')
+            .addClass(item.type.toLowerCase().replace(' ', '-'))
+            .html(item.type);
+          div.append(p).appendTo($('#results'));
         });
         let divs = $("div > div");
         for (let j = 0; j < divs.length; j += 3) {
@@ -22,6 +26,6 @@ $(document).ready(function() {
       })
   });
   $(document).on('mouseover', '.product', function() {
-    console.log('working');
+
   })
 });

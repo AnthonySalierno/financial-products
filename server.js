@@ -7,7 +7,6 @@ app.use(express.static(__dirname + '/'));
 app.get('/api/data', (req, res) => {
   let query = Object.keys(req.query)[0];
   let listOfProducts = products.findProducts(query);
-  console.log(listOfProducts);
   res.status(200).send(listOfProducts);
 });
 
