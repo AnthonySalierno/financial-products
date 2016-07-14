@@ -14,12 +14,18 @@ $(document).ready(function() {
               .addClass('product')
               .attr('id', item.product.toLowerCase().replace(' ', '-'))
               .addClass(item.type.toLowerCase().replace(' ', '-'))
-              .html(item.product)
-            let p = ($('<p />'))
+              .html(function() {
+                let regEx = new RegExp(query, 'i');
+                return item.product.replace(regEx, '<u>$&</u>');
+              });
+            let description = ($('<p />'))
+              .addClass('description')
+              .html(item.description);
+            let productType = ($('<p />'))
               .addClass('type')
               .addClass(item.type.toLowerCase().replace(' ', '-'))
               .html(item.type);
-            div.append(p).appendTo($('#results'));
+            div.append(description).append(productType).appendTo($('#results'));
           }
         });
         let divs = $("div > div");
@@ -38,10 +44,6 @@ $(document).ready(function() {
       .removeClass()
       .addClass(value.toLowerCase().replace(' ', '-'));
     onUserEntry();
-  });
-
-  $(document).on('mouseover', '.product', function() {
-
   });
 
 });
