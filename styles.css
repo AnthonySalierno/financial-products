@@ -23,6 +23,12 @@
   border: 1px solid black;
 }
 
+.product:hover {
+  border: 1px solid blue;
+  background-color: green;
+  color: white;
+}
+
 .description {
   text-align: center;
   font-size: 12px;
