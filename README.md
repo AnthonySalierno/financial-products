@@ -2,6 +2,17 @@
 
 Anthony's Notes
 -----------------
+I used jQuery and Underscore for this coding challenge.  I spun up a simple server
+using Node and Express to make AJAX requests.  I created a file called data.js
+to function as my database.  That file also contained some logic for filtering
+what information gets sent back to the client based on the query that the server
+received (the entry in the text input field).  Users can also filter by product type
+and the results that are shown will be re-rendered.
+
+I implemented a fuzzy search here because I like the user experience when they aren't
+sure what all the options are and can see some examples as they type any character.
+
+Please let me know if you have any questions!
 
 Instructions
 -----------------

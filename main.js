@@ -1,6 +1,8 @@
 $(document).ready(function() {
+  // This function is called when the user types in the input field or selects from the dropdown
   const onUserEntry = function() {
     let list = document.getElementById('results');
+    // Remove all child nodes each time this is called to prevent rendering duplicates
     while(list.hasChildNodes()) {
       list.removeChild(list.childNodes[0]);
     }
@@ -9,11 +11,15 @@ $(document).ready(function() {
       .done(function(data) {
         const filteredClass = $('#dropdown-menu').attr('class');
         _.each(data, function(item) {
-          if (!filteredClass || item.type.toLowerCase().replace(' ', '-') === filteredClass) {
+          // Format type and product for class name by swapping spaces for dashes and lowercasing
+          const typeFormattedForClassName = item.type.toLowerCase().replace(' ', '-');
+          const productFormattedForClassName = item.product.toLowerCase().replace(' ', '-');
+          // This conditional checks which elements to render based on what is selected in the dropdown
+          if (!filteredClass || typeFormattedForClassName === filteredClass) {
             let div = $('<div />')
               .addClass('product')
-              .attr('id', item.product.toLowerCase().replace(' ', '-'))
-              .addClass(item.type.toLowerCase().replace(' ', '-'))
+              .attr('id', productFormattedForClassName)
+              .addClass(typeFormattedForClassName)
               .html(function() {
                 let regEx = new RegExp(query, 'i');
                 return item.product.replace(regEx, '<u>$&</u>');
@@ -23,7 +29,7 @@ $(document).ready(function() {
               .html(item.description);
             let productType = ($('<p />'))
               .addClass('type')
-              .addClass(item.type.toLowerCase().replace(' ', '-'))
+              .addClass(typeFormattedForClassName)
               .html(item.type);
             div.append(description).append(productType).appendTo($('#results'));
           }
