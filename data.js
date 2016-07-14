@@ -45,3 +45,14 @@ const products = [
     type: 'Brokerage Account',
   },
 ];
+
+exports.findProducts = (query) => {
+  let results = [];
+  for (let i = 0; i < products.length; i++) {
+    let regEx = new RegExp(query, 'i');
+    if (query !== '' && products[i].product.match(regEx)) {
+      results.push(products[i].product);
+    }
+  }
+  return results;
+};

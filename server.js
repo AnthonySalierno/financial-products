@@ -1,11 +1,15 @@
 const express = require('express');
 const app = express();
-const path = require('path');
+const products = require('./data.js')
 
 app.use(express.static(__dirname + '/'));
 
 app.get('/api/data', (req, res) => {
-  console.log('hello');
+  let query = Object.keys(req.query)[0];
+  let listOfProducts = products.findProducts(query);
+  res.status(200).send(listOfProducts);
 });
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log('Listening on port 3000');
+});
