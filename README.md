@@ -2,6 +2,8 @@
 
 Anthony's Notes
 -----------------
+To run this app, just clone it from GitHub, run an npm install and then run npm start.
+
 I used jQuery and Underscore for this coding challenge.  I spun up a simple server
 using Node and Express to make AJAX requests.  I created a file called data.js
 to function as my database.  That file also contained some logic for filtering
